@@ -1,4 +1,4 @@
-body {
+html,body {
   background: #42a1c6;
 }
 
@@ -12,11 +12,13 @@ h1 {
 /* Poisson */
 .poisson {
   position: relative;
+  top:10em;
   width: 150px;
   height: 100px;
   animation-name: nage;
-  animation-duration: 8s;
+  animation-duration: 7s;
   animation-iteration-count: infinite;
+  animation-timing-function:linear
   /*border: 10px solid #fff;*/
 }
 
@@ -52,6 +54,39 @@ h1 {
   width: 10px;
   height: 10px;
 }
+/* 
+.bouche {
+  position: absolute;
+  margin-left: 97px;
+  margin-top: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: -3px 5px 0px 0px black;
+
+} */
+
+.bouche{
+  position: absolute;
+  margin-left: 80px;
+  margin-top: 40px;
+  width: 67px;
+  height: 36px;
+  background-color: black;
+  border-radius: 45%;
+}
+
+.bouche-cache{
+  margin-left: 82px;
+  margin-top: 40px;
+  width: 67px;
+  height: 36px;
+  border-radius: 40%;
+  background-color: orange;
+  transform: translateX(0px) translateY(-2px);
+}
+
 
 .nageoire {
   margin-top: -100px;
@@ -73,7 +108,7 @@ h1 {
   bottom: 0px;
   left: 0px;
   background-color: #c2b280;
-  height: 10px;
+  height: 20px;
   width: 100%;
 }
 
@@ -117,7 +152,7 @@ h1 {
 }
 
 .bubble-6 {
-  left: 1750px;
+  left: 1250px;
   animation: up 8s infinite;
 }
 
@@ -138,7 +173,19 @@ h1 {
   0% {
     transform: translateY(0px) translateX(10px) rotate(0deg);
   }
+  20% {
+    transform: translateY(50px) translateX(250px) rotate(20deg);
+  }
+  40%{
+    transform: translateY(100px) translateX(500px);
+  }
+  60%{
+    transform: translateY(50px) translateX(850px) rotate(-20deg);
+  }
+  80% {
+    transform: translateY(-100px) translateX(1100px) rotate(-30deg);
+  }
   100% {
-    transform: translateY(-0px) translateX(1200px) rotate(0deg);
+    transform: translateY(10px) translateX(1400px) rotate(0deg);
   }
 }
