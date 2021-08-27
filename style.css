@@ -1,75 +1,144 @@
-
-
-
-
-body,
-html {
-  width: 100%;
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
-
-  background: url("header.jpg") no-repeat center center fixed;
-    /* Full height */
-    /*height: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-    /* Center and scale the image nicely */
-    /*background-position: center;
-    background-repeat: no-repeat;*/
-    background-size: cover;
-}
-
-
-
-hr{
-  border-color: #F05F44;
-  border-width : 3px;
-  max-width: 65px;;
-}
-
-.container {
-  /*display:flex ;
-  align-items: center;*/
+body {
+  background: #42a1c6;
 }
 
 h1 {
-  font-size: 3rem;
-  color: #e2dbdb;
-  /* border-bottom:  2px solid #e2dbdb;
-  width: 500px;
-  text-align: center;*/
+  font-family: system-ui;
+  color: white;
+  opacity: 0.7;
+  text-align: center;
 }
 
-.buffer{
-  height: 10rem;
-}
-.btn-xl {
-  padding: 1rem 2rem;
-}
-.btn  {
-  border-radius: 300px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.btn-primary {
-  background-color:#F05F44;
-  border-color:#F05F44; ;
-
-}
-.btn-xl:focus, .btn-xl:visited, .btn-xl:active {
-  /*transform: scale(1.1);*/
-  /*transition: 0.5s;*/
-  background-color: #ee4b08;
-  border-color:#ee4b08; 
-  border-width: 4px;
-}
-.btn-xl:hover {
-  /*transform: scale(1.1);*/
-  /*transition: 0.5s;*/
-  background-color: #ee4b08;
-  border-color:#ee4b08; 
-  border-width: 4px;
+/* Poisson */
+.poisson {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  animation-name: nage;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  /*border: 10px solid #fff;*/
 }
 
+.poisson-corps {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 40px;
+  background-color: orange;
+  opacity: 1;
+  border-radius: 50%;
+  width: 150px;
+  height: 100px;
+}
 
+.eye {
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 20px;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.pupil {
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 5px;
+  z-index: 2;
+  background-color: black;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.nageoire {
+  margin-top: -100px;
+  background-color: orange;
+  width: 80px;
+  height: 50px;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.nageoire-bottom {
+  margin-top: -10px;
+  transform: rotate(-45deg);
+}
+
+/* sea bottom */
+.sea-bottom {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: #c2b280;
+  height: 10px;
+  width: 100%;
+}
+
+.bubbles {
+  background-color: white;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0px;
+  z-index: 5;
+  margin-right: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation-name: up;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.bubble-1 {
+  left: 50px;
+}
+
+.bubble-2 {
+  left: 100px;
+  animation-duration: 3s;
+}
+
+.bubble-3 {
+  left: 450px;
+  animation-duration: 5s;
+}
+
+.bubble-4 {
+  left: 750px;
+  animation-duration: 4s;
+}
+
+.bubble-5 {
+  left: 1050px;
+  animation: up 4s infinite;
+}
+
+.bubble-6 {
+  left: 1750px;
+  animation: up 8s infinite;
+}
+
+/* Animations */
+
+/* Bubbles movements */
+@keyframes up {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 800px;
+  }
+}
+
+/* Fish movements */
+@keyframes nage {
+  0% {
+    transform: translateY(0px) translateX(10px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-0px) translateX(1200px) rotate(0deg);
+  }
+}
